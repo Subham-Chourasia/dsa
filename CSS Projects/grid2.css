@@ -1,0 +1,32 @@
+ *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ }
+
+ body{
+    height: 100%;
+    width: 100%;
+ }
+
+ .container{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: grid;
+    gap: .4rem;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4, 1fr );
+    padding: 4rem;
+    border: 2px solid wheat;
+ }
+
+ .item{
+    height: 100px;
+    width: 100px;
+    background-color: wheat;
+    border: 5px solid red;
+    /* justify-self: stretch; */
+    /* align-self: center; */
+    place-self: center;
+ }
