@@ -33,6 +33,7 @@ function calculateTime(t1, t2, t3) {
     const p1 = func1(t1);
     const p2 = func2(t2);
     const p3 = func3(t3);
+    console.log(p1, "p1");
     return Promise.all([p1, p2, p3]).then((values) => {
         const endTime = Date.now();
         const timeTaken = endTime - startime;
