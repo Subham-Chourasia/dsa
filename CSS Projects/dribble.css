@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+html {
+    height: 100%;
+}
+#container{
+    height: 100%;
+    width: 100%;
+}
+
+#nav{
+    height: 100px;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 13px 30px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+}
+
+#content{
+    height: calc(100% - 100px);
+    width: 100%;
+    background-color: white;
+    gap: 5rem;
+    text-align: center;
+    padding-top: 9vh;
+
+}
+
+#signIn{
+    border: 2px solid black;
+    padding: .8rem 1rem;
+    border-radius: 20px;
+}
+
+#nav2{
+    align-items: center;
+    display: flex;
+    padding-right: 25px;
+    width: 20%;
+
+}
+
+#nav1 > ul > li{
+    list-style-type: none;
+    padding: 8px;
+}
+#nav1 > ul > li > img{
+    padding-right: 30px;
+}
+
+#nav1 > ul {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+#nav1{
+    width: 80%;
+}
+
+#middle-header > h1{
+    line-height: 1.5; 
+    font-size: xxx-large;
+    letter-spacing: 2px;
+}
+
+#middle-header > ul{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+#middle-header > ul>li{
+    padding: 8px;
+    margin-right: 10px;
+    list-style-type: none;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: #fffcfc;
+
+}
+@media (max-width: 768px) {
+    #middle-header > h1 {
+        line-height: 1;
+        font-size: x-large; 
+    }
+    #middle-header >ul >li{  
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+    #middle-header > img {
+        width: 100%;
+    }
+    #nav1{
+        width: 75%;
+        box-sizing: border-box;
+        gap: 2rem;
+    }
+    #nav2{
+        width: 25%;
+    }
+    #nav{
+        flex-wrap: wrap;
+        padding: 10px;
+        height: auto;
+
+    }
+}
+
