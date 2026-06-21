@@ -12,6 +12,7 @@ function secondLargest(arr) {
     return secLar;
 }
 
+//Important note-- if we put arr[i] >= lar then we will get same lar and seclar if duplicate largest values are there
 let a = [222,33,22,111,3];
 console.log(secondLargest(a));
 
