@@ -18,18 +18,17 @@ function moveZerosEndOfArray(arr){
 
 
 //optimal
-function moveZerosEndOfArrayOptimal(arr){
+var moveZeroes = function(arr) {
     let i = 0;
-    let temp;
-    for(let j = 0; j < arr.length; j++){
-        if(arr[j] === 0){
-            temp = arr[j];
-            arr[j] = arr[arr.length - 1 - i];
-            arr[arr.length - 1 - i] = temp;
+    for(let j = 0; j < arr.length; j++) {
+        if(arr[j] !== 0) {
+            let temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
             i++;
         }
     }
     return arr;
-}
-console.log(moveZerosEndOfArrayOptimal([1,0,2,3,2,0,0,3,2,1])); //
+};
+console.log(moveZeroes([1,0,2,3,2,0,0,3,2,1])); //
 // console.log(moveZerosEndOfArrayOptimal([1,0,2,3,0,0,0,0,0,3,2,0,0,4,5,1,0]));
