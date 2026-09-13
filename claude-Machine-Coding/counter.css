@@ -1,0 +1,13 @@
+.container{
+    height: 10vh;
+    width: 90vh;
+    box-sizing: border-box;
+    border: 2px solid black;
+    background-color: violet;
+}
+
+.primary-button{
+    width: 140px;
+    height: 30px;
+    padding: 30px;
+}
