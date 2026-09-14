@@ -1,0 +1,10 @@
+function star3(n){
+    for(let i = 1; i <= n; i++){
+        let row = "";
+        for(let j = 1; j <= i ; j++){
+            row = row + j
+        }
+        console.log(row);
+    }
+}
+star3(4);
