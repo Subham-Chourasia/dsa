@@ -1,19 +1,26 @@
-//Binary
-
 function binarySearch(arr, target){
-	let l = 0;
-	let r = arr.length -1;
+    if(!Array.isArray(arr) || arr.length === 0){
+        return -1;
+    }
+    if(arr.length === 1 && arr[0] === target) {
+        return 0;
+    }
 
-	while ( l <= r) {
-		let midIndex =  Math.ceil( (l + r)/2);
-	let midValue = arr[midIndex];
-		if(midValue === target){
-			return midIndex;
-		} else if( midValue > target ){
-			r = midIndex - 1;
-		} else if (midValue < target) {
-			l = midIndex + 1;
-		}
-	}
-	return -1;
+    let i = 0;
+    let j = arr.length - 1;
+
+    while(i <= j){
+        
+    let midIndex =  Math.floor((i + j ) / 2);
+    let midval = arr[midIndex];
+        if(target === midval) {
+            return midIndex;
+        } else if (midval > target){
+            j = midIndex - 1;
+        } else{
+            i = midIndex + 1;
+        }
+    }
+    return -1;
 }
+console.log(binarySearch([1,2,3,4,5,6,7,8], 4));
