@@ -1,10 +1,30 @@
-const arr = [5,3,89,53,2,5,8,6,399,9];
-let max = arr[0];
+function test(arr){
+    if(!Array.isArray(arr) || arr.length === 0)
+        return{
+            lar: null,
+            secLar: null
+        };
+    if(arr.length === 1){
+        return{
+            lar: arr[0],
+            secLar: null
+        }
+    }
+    let lar = arr[0];
+    let secLar = null;
 
-for(i = 0; i< arr.length; i++){
-  if(arr[i] > max){
-    max = arr[i];
-  }
+    for(let i = 1; i< arr.length; i++){
+        if(arr[i] > lar) {
+            secLar = lar;
+            lar = arr[i];
+        } else if(arr[i] < lar && (arr[i] > secLar || secLar === null)){
+            secLar = arr[i];
+        }
+    }
+    return {
+        lar : lar,
+        secLar: secLar
+    }
 }
 
-console.log(max)
+console.log(test([1,2,33,33,3,4]));

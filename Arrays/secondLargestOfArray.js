@@ -1,42 +1,30 @@
-function secondLargest(arr) {
+function test(arr){
+    if(!Array.isArray(arr) || arr.length === 0)
+        return{
+            lar: null,
+            secLar: null
+        };
+    if(arr.length === 1){
+        return{
+            lar: arr[0],
+            secLar: null
+        }
+    }
     let lar = arr[0];
-    let secLar = 0;
-    for(i=1; i< arr.length; i++) {
-        if (arr[i] > lar) {
+    let secLar = null;
+
+    for(let i = 1; i< arr.length; i++){
+        if(arr[i] > lar) {
             secLar = lar;
             lar = arr[i];
-        } else if (arr[i] > secLar) {
+        } else if(arr[i] < lar && (arr[i] > secLar || secLar === null)){
             secLar = arr[i];
         }
     }
-    return secLar;
+    return {
+        lar : lar,
+        secLar: secLar
+    }
 }
 
-//Important note-- if we put arr[i] >= lar then we will get same lar and seclar if duplicate largest values are there
-let a = [222,33,22,111,3];
-console.log(secondLargest(a));
-
-
-
-// optimal claude
-
-function secondLargest(arr) {
-    if (!Array.isArray(arr) || arr.length < 2) {
-        return null;
-    }
-
-    let lar = -Infinity;
-    let secLar = -Infinity;
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > lar) {
-            secLar = lar;
-            lar = arr[i];
-        } else if (arr[i] > secLar && arr[i] < lar) {
-            // strictly less than lar — skips duplicates of the largest
-            secLar = arr[i];
-        }
-    }
-
-    return secLar === -Infinity ? null : secLar;
-}
+console.log(test([1,2,33,33,3,4]));

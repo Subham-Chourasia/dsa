@@ -28,3 +28,26 @@ function removeDuplicateTwoPointer(arr){
     return arr;
 }
 console.log(removeDuplicateTwoPointer([1,2,2,3,3,3,3,3,3,3,3,4,4]));
+
+
+//best approach
+function removeDuplicateFromSortedArray(arr){
+        if(!Array.isArray(arr) ||arr.length === 0){
+        return -1;
+    }
+    if(arr.length === 1) {
+        return -1;
+    }
+
+    let p1 = 0;
+
+    for(let i = 1; i < arr.length; i++){
+        if(arr[p1] === arr[i]){
+            arr.splice(i,1);
+            i--;
+        } else {
+            p1++;
+        }
+    }
+    return arr;
+}

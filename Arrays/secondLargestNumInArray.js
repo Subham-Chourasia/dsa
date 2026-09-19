@@ -1,21 +1,30 @@
-const arr = [12222, 3323, 2222, 4343];
-
-// Edge case: check if array has at least two elements
-if (arr.length < 2) {
-    console.log("Array must have at least two elements.");
-} else {
-    let max1 = -Infinity;
-    let max2 = -Infinity;
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > max1) {
-            max2 = max1;
-            max1 = arr[i];
-        } else if (arr[i] > max2 && arr[i] !== max1) {
-            max2 = arr[i];
+function test(arr){
+    if(!Array.isArray(arr) || arr.length === 0)
+        return{
+            lar: null,
+            secLar: null
+        };
+    if(arr.length === 1){
+        return{
+            lar: arr[0],
+            secLar: null
         }
     }
+    let lar = arr[0];
+    let secLar = null;
 
-    console.log("Second largest:", max2);
-    console.log("Largest:", max1);
+    for(let i = 1; i< arr.length; i++){
+        if(arr[i] > lar) {
+            secLar = lar;
+            lar = arr[i];
+        } else if(arr[i] < lar && (arr[i] > secLar || secLar === null)){
+            secLar = arr[i];
+        }
+    }
+    return {
+        lar : lar,
+        secLar: secLar
+    }
 }
+
+console.log(test([1,2,33,33,3,4]));

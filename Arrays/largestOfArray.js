@@ -1,29 +1,30 @@
-function largest(arr) {
+function test(arr){
+    if(!Array.isArray(arr) || arr.length === 0)
+        return{
+            lar: null,
+            secLar: null
+        };
+    if(arr.length === 1){
+        return{
+            lar: arr[0],
+            secLar: null
+        }
+    }
     let lar = arr[0];
-    for(i = 1; i < arr.length; i++) {
+    let secLar = null;
+
+    for(let i = 1; i< arr.length; i++){
         if(arr[i] > lar) {
+            secLar = lar;
             lar = arr[i];
+        } else if(arr[i] < lar && (arr[i] > secLar || secLar === null)){
+            secLar = arr[i];
         }
     }
-    return lar;
-}
-let b = [22,2,11,23,3];
-
-console.log(largest(b));
-
-
-// optimal claude
-
-function largest(arr) {
-    if (!Array.isArray(arr) || arr.length === 0) {
-        return null; // or throw an Error, depending on your needs
+    return {
+        lar : lar,
+        secLar: secLar
     }
-
-    let lar = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > lar) {
-            lar = arr[i];
-        }
-    }
-    return lar;
 }
+
+console.log(test([1,2,33,33,3,4]));

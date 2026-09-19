@@ -1,20 +1,17 @@
-function checkArrayIsSorted(arr){
-    for(let i = 0; i< arr.length; i++){
-        if(arr[i] > arr[i+1] && i + 1 < arr.length){
-            return false
+function checkSortedArray(arr){
+    if(!Array.isArray(arr) || arr.length === 0){
+        return -1;
+    }
+    if(arr.length === 1) {
+        return -1;
+    }
+
+    for(let i = 0; i < arr.length - 1; i++){
+        if(arr[i] > arr[i + 1]) {
+            return false;
         }
     }
-        return true;
-
+    return true;
 }
 
-console.log(checkArrayIsSorted([1, 2, 3, 0]));
-
-
-//better approach
-// function checkArrayIsSorted(arr){
-//     for(let i = 0; i < arr.length - 1; i++){    // ⬅️ bounds in the loop itself
-//         if(arr[i] > arr[i+1]) return false;       // ⬅️ no extra check needed inside
-//     }
-//     return true;
-// }
+console.log(checkSortedArray([1,2,3,4]));
